@@ -13,6 +13,30 @@ class CuboidMaker2 {
 }
 }
 
+class CubeMaker extends CuboidMaker2 {
+    constructor(cubeattrs) {
+        super (cubeattrs);
+        this.edge = cubeattrs.edge;
+    }
+cubevolume () {
+    return this.edge * this.edge * this.edge; 
+}
+
+cubesurfaceArea () {
+    return 6 * (this.edge * this.edge); 
+}
+}
+
+const cube = new CubeMaker ({
+    length: 4,
+    width: 5,
+    height: 4,
+    edge: 3,
+})
+
+console.log(cube.cubevolume());
+console.log(cube.cubesurfaceArea());
+
 // Test your volume and surfaceArea methods by uncommenting the logs below:
 console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
